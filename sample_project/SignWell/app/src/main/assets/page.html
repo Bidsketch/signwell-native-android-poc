@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SignWell Android Demo</title>
+        <script type="text/javascript" src="https://static.signwell.com/assets/embedded.js"></script>
+    </head>
+
+    <body>
+        <script>
+        var signWellEmbed = new SignWellEmbed({
+          url: '$SIGNING_URL$',
+          events: {
+            completed: e => {
+              AndroidApp.onSigningComplete();
+            }
+          }
+        });
+        signWellEmbed.open();
+        </script>
+    </body>
+</html>
